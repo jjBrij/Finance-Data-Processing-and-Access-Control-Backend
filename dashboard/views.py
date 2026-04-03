@@ -7,7 +7,7 @@ from transactions.models import Transaction
 
 
 class SummaryView(APIView):
-    """Total income, expenses, and net balance."""
+  
     permission_classes = [IsAnyRole]
 
     def get(self, request):
@@ -29,7 +29,7 @@ class SummaryView(APIView):
 
 
 class CategorySummaryView(APIView):
-    """Total amount grouped by category."""
+   
     permission_classes = [IsAnyRole]
 
     def get(self, request):
@@ -45,7 +45,7 @@ class CategorySummaryView(APIView):
 
 
 class MonthlyTrendsView(APIView):
-    """Income and expense totals grouped by month."""
+    
     permission_classes = [IsAnyRole]
 
     def get(self, request):
@@ -58,7 +58,7 @@ class MonthlyTrendsView(APIView):
             .order_by('month')
         )
 
-        # Format into clean structure
+  
         result = {}
         for entry in monthly:
             month_str = entry['month'].strftime('%Y-%m')
@@ -70,7 +70,7 @@ class MonthlyTrendsView(APIView):
 
 
 class RecentActivityView(APIView):
-    """Last 10 transactions."""
+    
     permission_classes = [IsAnyRole]
 
     def get(self, request):

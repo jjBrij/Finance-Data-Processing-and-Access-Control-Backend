@@ -13,7 +13,7 @@ from .serializers import (
 )
 
 
-# ── Login ─────────────────────────────────────────────────────────────
+
 class LoginView(APIView):
     permission_classes = []  # Public endpoint
 
@@ -41,7 +41,7 @@ class LoginView(APIView):
         })
 
 
-# ── List & Create Users (admin only) ─────────────────────────────────
+
 class UserListCreateView(APIView):
     permission_classes = [IsAdmin]
 
@@ -58,7 +58,7 @@ class UserListCreateView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# ── Retrieve, Update, Delete a User (admin only) ─────────────────────
+
 class UserDetailView(APIView):
     permission_classes = [IsAdmin]
 
@@ -92,7 +92,7 @@ class UserDetailView(APIView):
         return Response({'detail': 'User deleted.'}, status=status.HTTP_204_NO_CONTENT)
 
 
-# ── Change Password (self) ────────────────────────────────────────────
+
 class ChangePasswordView(APIView):
     def post(self, request):
         serializer = ChangePasswordSerializer(data=request.data, context={'request': request})
@@ -102,7 +102,7 @@ class ChangePasswordView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# ── Me (current user profile) ─────────────────────────────────────────
+
 class MeView(APIView):
     def get(self, request):
         return Response(UserSerializer(request.user).data)
