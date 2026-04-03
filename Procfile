@@ -1,0 +1,1 @@
+web: gunicorn zorvyn.wsgi --log-file -
