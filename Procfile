@@ -1,1 +1,2 @@
-web: python manage.py migrate && gunicorn zorvyn.wsgi
+
+web: python manage.py migrate && python manage.py collectstatic --noinput && gunicorn zorvyn.wsgi
