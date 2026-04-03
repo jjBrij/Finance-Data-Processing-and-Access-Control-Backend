@@ -130,15 +130,18 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
 }
 
-ALLOWED_HOSTS = ['*.railway.app']
+ALLOWED_HOSTS = ['*']
 
-CORS_ALLOWED_ORIGINS = config(
-    'CORS_ALLOWED_ORIGINS',
-    default='http://localhost:5173'
-).split(',')
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "https://finance-ui-two.vercel.app"
+]
 CSRF_TRUSTED_ORIGINS = [
     "https://finance-ui-two.vercel.app"
 ]
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
