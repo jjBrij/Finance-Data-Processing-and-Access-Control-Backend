@@ -137,8 +137,8 @@ CORS_ALLOWED_ORIGINS = [
     "https://finance-ui-two.vercel.app"
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "https://finance-ui-two.vercel.app"
-     "https://zorvyn.up.railway.app",
+    "https://finance-ui-two.vercel.app",
+    "https://zorvyn.up.railway.app",
 ]
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
