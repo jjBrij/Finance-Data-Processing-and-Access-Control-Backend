@@ -16,6 +16,7 @@ import dj_database_url
 from decouple import config
 from pathlib import Path
 from datetime import timedelta
+from django.db.models.signals import post_migrate
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -137,6 +138,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 CSRF_TRUSTED_ORIGINS = [
     "https://finance-ui-two.vercel.app"
+     "https://zorvyn.up.railway.app",
 ]
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
